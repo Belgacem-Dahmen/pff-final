@@ -8,8 +8,8 @@
         @vite('resources/css/app.css')
         <title>Rh-ETAI</title>
     </head>
-<body class="bg-gray-200">
-    <nav class="p-3 bg-white flex justify-between">
+<body class="bg-gray-100">
+    <nav class="p-3 bg-white flex justify-between shadow-2xl">
         <ul class="flex items-center">
           <li><a href="/" class=""><img class="w-64 "src="{{ asset('images/logo-ipda.png')}}" alt="test"></a></li>
           @auth
@@ -44,6 +44,16 @@
             @endguest
             
     </nav>
+    
+    @auth
+    <div class="flex">
+    @include('partials._aside')
+    @endauth
+
+    
     @yield('content')
+   
+
+    </div>
 </body>
 </html>

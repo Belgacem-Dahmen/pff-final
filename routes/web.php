@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,5 +43,7 @@ Route::get('/demandes', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/services', [ServiceController::class, 'index'])->name('service');
 
 
