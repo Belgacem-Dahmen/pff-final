@@ -16,19 +16,25 @@ class ServiceController extends Controller
 }
 
 public function store(Request $request){
-    
+
+   
     $this->validate($request , [
        'nom_service'=>'required',
-       'responsable_service'=>'required',
+       'responsable'=>'required',
+       'description'=>'required',
 
     ]);
 
+    
+   
     Service::create([
-        'nom_service' => $request->nom,
+        'nom_service' => $request->nom_service,
         'description' => $request->description,
-        'responsable'=>$request->responsable_service,
-        'status'=>'1'
+        'responsable'=>$request->responsable,
+        'status'=>'1',
      ]);
+
+     return redirect()->route('service')->with('status','Le service a été crée.');
 }
 }
 

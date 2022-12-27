@@ -28,37 +28,51 @@
                         </thead>    
                         </table>  
                         <div class="flex p-3">
-       <form action="{{route('service')}}" method="post">
+       <form  method="post" action="{{route('service')}}">
+                    
                     @csrf
                     
                         <div class="mb-4">
                         <label for="nom_service" class="sr-only"> Nom service</label>
                         <input type="text" name="nom_service" id="nom_service" placeholder="Nom service"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" >
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="{{old('nom_service')}}" >
                         <div class="text-red-500 mt-2 text-sm">  
-
+                        @error('nom_service')
+                        <div class="text-red-500 mt-2 text-sm"> {{"Le champs nom est obligatoire"}}  </div>
+                         @enderror  
                         </div>
                     
                     
                     <div class="mb-4">
                         <label for="responsable_service" class="sr-only"> Responsable</label>
                         <input type="text" name="responsable" id="responsable" placeholder="Responsable"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" >
-                        <div class="text-red-500 mt-2 text-sm">  </div>
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg "value="{{old('responsable')}}" >
+                        <div class="text-red-500 mt-2 text-sm"> @error('responsable')
+                        <div class="text-red-500 mt-2 text-sm"> {{"Le champs responsable est obligatoire"}}  </div>
+                         @enderror   </div>
                         <div class="mb-4">
                         <label for="description" class="sr-only"> Description </label>
+
                         <input type="text" name="description" id="description" placeholder="Description"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" >
-                        <div class="text-red-500 mt-2 text-sm">  
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg"value="{{old('description')}}">
+                        <div class="text-red-500 mt-2 text-sm">  @error('nom_service')
+                        <div class="text-red-500 mt-2 text-sm"> {{"La description est obligatoire"}}  </div>
+                         @enderror  
 
                         </div>
                         <button class="text-white bg-blue-700 px-4 py-2 rounded-lg" type="submit">Ajouter </button>
 
 
                     </div>
+
+
                     
                 </form>
-                
+                @if (session('status'))
+            <div class="text-green-700 text-2xl">
+            {{ session('status') }}
+            </div>
+@endif
     </div>
                      
 
