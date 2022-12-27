@@ -29,6 +29,8 @@ class RegisterController extends Controller
 
      ]);
 
+     dd($request);
+
      User::create([
         'nom' => $request->nom,
         'prenom' => $request->prenom,

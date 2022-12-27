@@ -19,8 +19,9 @@ return new class extends Migration
             $table->id();
             $table->string('nom_service');
             $table->string('responsable');
-            
- 
+            $table->boolean('status')->default('1');
+            $table->string('description');
+            $table->timestamps();
 
         });
     }

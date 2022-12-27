@@ -4,73 +4,27 @@
 @section('content')
 
        <!-- component -->
-
-       
-    
-    
-    
-
    
 <div class="w-full h-full mx-auto block rounded-lg ">
-    <div>
     
     <div class="w-auto h-screen bg-gray-100  flex font-sans overflow-hidden">
-        
         <div class="w-full">
-            
             <div class="bg-white shadow-md rounded my-6 ">
                 <table class=" min-w-max w-full table-auto mb-5">
-                    <thead class="mb-6 ">
+                    <thead class="mb-6">
                         
                         <tr class=" text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-right"><button class="text-white bg-blue-700 px-4 py-2 rounded-lg" type="submit">Ajouter </button>  </th>
                         </tr>
                         </thead>    
-                        </table>  
-                        <div class="flex p-3">
-       <form action="{{route('service')}}" method="post">
-                    @csrf
-                    
-                        <div class="mb-4">
-                        <label for="nom_service" class="sr-only"> Nom service</label>
-                        <input type="text" name="nom_service" id="nom_service" placeholder="Nom service"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" >
-                        <div class="text-red-500 mt-2 text-sm">  
-
-                        </div>
-                    
-                    
-                    <div class="mb-4">
-                        <label for="responsable_service" class="sr-only"> Responsable</label>
-                        <input type="text" name="responsable" id="responsable" placeholder="Responsable"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" >
-                        <div class="text-red-500 mt-2 text-sm">  </div>
-                        <div class="mb-4">
-                        <label for="description" class="sr-only"> Description </label>
-                        <input type="text" name="description" id="description" placeholder="Description"
-                        class="bg-gray-100 border-2 w-full p-4 rounded-lg" >
-                        <div class="text-red-500 mt-2 text-sm">  
-
-                        </div>
-                        <button class="text-white bg-blue-700 px-4 py-2 rounded-lg" type="submit">Ajouter </button>
-
-
-                    </div>
-                    
-                </form>
-                
-    </div>
-                     
-
-                </div>
-    </div>           
+                        </table>             
                 <table class=" min-w-max w-full table-auto">
                     <thead class="mb-6">
                         
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                            <th class="py-3 px-6 text-left">Service</th>
+                            <th class="py-3 px-6 text-left">Equipe</th>
                             <th class="py-3 px-6 text-left">Responsable</th>
-                            <th class="py-3 px-6 text-center">Epmolyés</th>
+                            <th class="py-3 px-6 text-center">Service</th>
                             <th class="py-3 px-6 text-center">Status</th>
                             <th class="py-3 px-6 text-center">Actions</th>
                         </tr>

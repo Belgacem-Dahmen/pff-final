@@ -6,7 +6,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ServiceController;
-
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\EmployeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +46,10 @@ Route::get('/profile', function () {
 });
 
 Route::get('/services', [ServiceController::class, 'index'])->name('service');
+Route::post('/services',[ServiceController::class, 'store']);
+
+Route::get('/equipes', [EquipeController::class, 'index'])->name('equipe');
 
 
+
+Route::get('/employes', [EmployeController::class, 'index'])->name('employe');

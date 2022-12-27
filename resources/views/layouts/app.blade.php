@@ -21,7 +21,8 @@
 
         <ul class="flex items-center">
             @auth
-            <li><a href="profile" class="p-3"> Bonjour <span class="font-bold">{{auth()->user()->prenom}}</span> </a></li> 
+            <li><a href="profile" class="p-3"> 
+            <i class="fa-solid fa-hand text-blue-700 pr-1 hover:animate-pulse hover:rotate-45"></i> Bonjour <span class="font-bold">{{auth()->user()->prenom}}</span> </a></li> 
             <li>
                 <form action="{{ route('logout')}}" method="post">
                     @csrf
@@ -37,7 +38,7 @@
 
             @guest
             <li><a href="{{ route('login')}}" class="p-3"> 
-                    <i class="fa fa-sign-in text-blue-700 pr-2" aria-hidden="true"></i> Login</a></li>
+                    <i class="fa fa-sign-in text-blue-700 pr-2 " aria-hidden="true"></i> Login</a></li>
             <li><a href="{{ route('register')}}" class="p-3"><i class="pr-2 fa-solid fa-user-plus text-blue-700"></i> Register</a></li>
             
             </ul>
