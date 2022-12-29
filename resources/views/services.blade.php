@@ -18,16 +18,21 @@
         
         <div class="w-full">
             
-            <div class="bg-white shadow-md rounded my-6 ">
+            <div x-data="{ open: false }" class="bg-white shadow-md rounded my-6 ">
                 <table class=" min-w-max w-full table-auto mb-5">
                     <thead class="mb-6 ">
                         
                         <tr class=" text-gray-600 uppercase text-sm leading-normal">
-                            <th class="py-3 px-6 text-right"><button class="text-white bg-blue-700 px-4 py-2 rounded-lg" type="submit">Ajouter </button>  </th>
+                            <th class="py-3 px-6 text-right"><button x-on:click="open = ! open" class="text-white bg-blue-700 px-4 py-2 rounded-lg" type="submit">Ajouter </button>  </th>
                         </tr>
-                        </thead>    
+                        </thead> 
+                        <div x-data="{ open: false }">
+
+ 
+   
+</div>   
                         </table>  
-                        <div class="flex p-3">
+                        <div x-show="open" class="flex p-3">
        <form  method="post" action="{{route('service')}}">
                     
                     @csrf

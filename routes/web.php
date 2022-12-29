@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\EquipeController;
-use App\Http\Controllers\EmployeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +54,4 @@ Route::get('/equipes', [EquipeController::class, 'index'])->name('equipe');
 
 
 Route::get('/employes', [EmployeController::class, 'index'])->name('employe');
+Route::get('/reservations', [ReservationController::class, 'index'])->name('reservation');
