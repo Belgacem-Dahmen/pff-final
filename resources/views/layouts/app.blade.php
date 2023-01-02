@@ -47,8 +47,10 @@
     </nav>
     
     @auth
+    @include('partials._notif')
     <div class="flex">
     @include('partials._aside')
+    
     @endauth
 
     

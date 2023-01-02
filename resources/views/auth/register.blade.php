@@ -58,12 +58,9 @@
         <div class="mb-4">
                     <select name="service" id="service" class="bg-gray-100 border-2 w-full p-4 rounded-lg">
                     <option value="">Selectionnez votre service</option>
-                    <option value="Clients">Clients</option>
-                    <option value="Commercial">Commercial</option>
-                    <option value="Devloppement">Devloppement</option>
-                    <option value="Dsi">DSI</option>
-                    <option value="Qas">Qas</option>
-                    <option value="Marketing">Marketing</option>
+                    @foreach ($services as $service)
+                    <option value="{{$service->nom_service}}">{{$service->nom_service}}</option>
+                    @endforeach
             </select>
             
 

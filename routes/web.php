@@ -47,7 +47,8 @@ Route::get('/profile', function () {
 });
 
 Route::get('/services', [ServiceController::class, 'index'])->name('service');
-Route::post('/services',[ServiceController::class, 'store']);
+Route::post('/services',[ServiceController::class, 'store'])->name('service');
+Route::delete('services',[ServiceController::class, 'destroy'])->name('service');
 
 Route::get('/equipes', [EquipeController::class, 'index'])->name('equipe');
 

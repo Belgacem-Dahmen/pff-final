@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -15,7 +16,10 @@ class RegisterController extends Controller
     }
     
     public function index(){
-        return view('auth.register');
+        $services=Service::where('status', '=', 1)->get();
+        return view('auth.register',[
+           'services'=> $services,
+        ]);
     }
 
     public function store(Request $request){
